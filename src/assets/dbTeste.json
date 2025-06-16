@@ -1,0 +1,22 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Camiseta Branca",
+      "preco": 49.9,
+      "imagem": "/assets/camisa.jpeg"
+    },
+    {
+      "id": 2,
+      "nome": "Calça Jeans",
+      "preco": 89.9,
+      "imagem": "/assets/jeans.jpeg"
+    },
+    {
+      "id": 3,
+      "nome": "Tênis Esportivo",
+      "preco": 199.9,
+      "imagem": "/assets/tenis.jpeg"
+    }
+  ]
+}
