@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProdutoCard from "./components/ProdutoCard";
 import Carrinho from "./components/Carrinho";
@@ -9,10 +9,9 @@ function App() {
   const [carrinho, setCarrinho] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/produtos")
-      .then((res) => setProdutos(res.data))
-      .catch((err) => console.error("Erro ao carregar produtos", err));
+    axios.get("http://localhost:3001/produtos")
+      .then(res => setProdutos(res.data))
+      .catch(err => console.error("Erro ao carregar produtos:", err));
   }, []);
 
   const adicionarAoCarrinho = (produto) => {
@@ -20,14 +19,14 @@ function App() {
   };
 
   const removerDoCarrinho = (id) => {
-    setCarrinho(carrinho.filter((p) => p.id !== id));
+    setCarrinho(carrinho.filter(p => p.id !== id));
   };
 
   return (
     <div className="app-container">
-      <h1>*NOME DA LOJA*</h1>
+      <h1>Minha Loja Online</h1>
       <div className="produtos-lista">
-        {produtos.map((produto) => (
+        {produtos.map(produto => (
           <ProdutoCard
             key={produto.id}
             produto={produto}
@@ -35,7 +34,10 @@ function App() {
           />
         ))}
       </div>
-      <Carrinho carrinho={carrinho} removerDoCarrinho={removerDoCarrinho} />
+      <Carrinho
+        carrinho={carrinho}
+        removerDoCarrinho={removerDoCarrinho}
+      />
     </div>
   );
 }
