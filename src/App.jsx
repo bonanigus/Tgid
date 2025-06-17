@@ -18,9 +18,14 @@ function App() {
     setCarrinho([...carrinho, produto]);
   };
 
-  const removerDoCarrinho = (id) => {
-    setCarrinho(carrinho.filter(p => p.id !== id));
+  const removerDoCarrinho = (idDoProduto) => {
+  const index = carrinho.findIndex(item => item.id === idDoProduto);
+  if (index !== -1) {
+    const novoCarrinho = [...carrinho];
+    novoCarrinho.splice(index, 1);  // Remove apenas  item
+    setCarrinho(novoCarrinho);
   };
+};
 
   return (
     <div className="app-container">

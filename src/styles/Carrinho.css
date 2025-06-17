@@ -1,0 +1,26 @@
+.carrinho {
+    margin-top: 20px;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+}
+.carrinho ul{
+    list-style: none;
+    padding: 0;
+}
+.carrinho li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.carrinho button{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+}
